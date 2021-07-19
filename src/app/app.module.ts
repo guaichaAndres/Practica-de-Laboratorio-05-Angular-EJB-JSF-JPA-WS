@@ -22,6 +22,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { WsJeeLoginService } from './services/ws-jee-login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { WsJeeService } from './services/ws-jee.service';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 
 @NgModule({
@@ -29,8 +30,7 @@ import { WsJeeService } from './services/ws-jee.service';
     AppComponent,
     LogInComponent,
     RegisterComponent,
-    RegisterComponent,
-    LogInComponent
+    InicioComponent
   ],
   imports: [
     BrowserModule,
