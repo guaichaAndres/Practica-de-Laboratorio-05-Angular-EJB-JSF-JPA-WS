@@ -21,6 +21,7 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
 import { WsJeeLoginService } from './services/ws-jee-login.service';
 import { HttpClientModule } from '@angular/common/http';
+import { WsJeeService } from './services/ws-jee.service';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import { HttpClientModule } from '@angular/common/http';
     FlexLayoutModule,
     HttpClientModule
   ],
-  providers: [WsJeeLoginService],
+  providers: [WsJeeLoginService, WsJeeService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
