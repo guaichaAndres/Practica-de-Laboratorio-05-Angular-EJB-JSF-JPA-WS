@@ -10,6 +10,7 @@ import { WsJeeLoginService } from 'src/app/services/ws-jee-login.service';
 export class LogInComponent implements OnInit {
 public form : FormGroup;
   constructor(private RestService : WsJeeLoginService, private formBuilder: FormBuilder) {
+    
     this.form = this.formBuilder.group({
       correo : [],
       contrasena : []
@@ -21,8 +22,8 @@ public form : FormGroup;
   }
 
 public enviarCredenciales(){
-  this.RestService.login('http://localhost:8080/PracticaDeLaboratorio03EJB-JSF-JPA/rest/cliente/login',
-  this.form.value
+ 
+  this.RestService.login('http://localhost:8080/PracticaDeLaboratorio03EJB-JSF-JPA/rest/cliente/login'
   )
   .subscribe(respuesta =>{
     console.log('Inicio Correcto');
