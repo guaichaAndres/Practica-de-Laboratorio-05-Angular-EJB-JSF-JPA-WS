@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder } from '@angular/forms';
 import { WsJeeLoginService } from 'src/app/services/ws-jee-login.service';
+import { Router } from '@angular/router';
+
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-log-in',
@@ -9,7 +13,7 @@ import { WsJeeLoginService } from 'src/app/services/ws-jee-login.service';
 })
 export class LogInComponent implements OnInit {
 public form : FormGroup;
-  constructor(private RestService : WsJeeLoginService, private formBuilder: FormBuilder) {
+  constructor(private RestService : WsJeeLoginService, private formBuilder: FormBuilder,private router: Router) {
     
     this.form = this.formBuilder.group({
       correo : [],
@@ -27,6 +31,8 @@ public enviarCredenciales(){
   )
   .subscribe(respuesta =>{
     console.log('Inicio Correcto');
+    this.router.navigate(['/inicio']);
+
   })
 }
 }

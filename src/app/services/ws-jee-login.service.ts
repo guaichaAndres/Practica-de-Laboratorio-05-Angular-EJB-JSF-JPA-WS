@@ -11,7 +11,7 @@ export class WsJeeLoginService {
   public login(url:string ){
     const body = new HttpParams()
   .set('correo', "kguaicha@est.ups.edu.ec")
-  .set('contrasena', "kguaicha");
+  .set('contrasena', "kguaichaa");
 
    return this.http.post(url,body.toString(),{
   headers: new HttpHeaders()
