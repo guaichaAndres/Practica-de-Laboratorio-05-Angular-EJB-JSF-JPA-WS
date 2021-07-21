@@ -26,8 +26,8 @@ public form : FormGroup;
   }
 
 public enviarCredenciales(){
- 
-  this.RestService.login('http://localhost:8080/PracticaDeLaboratorio03EJB-JSF-JPA/rest/cliente/login'
+  this.RestService.login('http://localhost:8080/PracticaDeLaboratorio03EJB-JSF-JPA/rest/cliente/login',
+  this.form.controls['correo'].value,this.form.controls['contrasena'].value,
   )
   .subscribe(respuesta =>{
     console.log('Inicio Correcto');
