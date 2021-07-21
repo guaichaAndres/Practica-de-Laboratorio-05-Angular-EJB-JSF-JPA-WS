@@ -8,7 +8,7 @@ export class WsJeeLoginService {
 
   constructor(private http: HttpClient) { }
 
-  public login(url:string,correo:any, contrasena:any ){
+  public login(url:string, correo:any , contrasena:any ){
      const body = new HttpParams()
   .set('correo', correo)
   .set('contrasena', contrasena);

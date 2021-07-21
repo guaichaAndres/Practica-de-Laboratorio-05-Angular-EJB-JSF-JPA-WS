@@ -3,7 +3,6 @@ import { FormGroup,FormBuilder } from '@angular/forms';
 import { WsJeeLoginService } from 'src/app/services/ws-jee-login.service';
 import { Router } from '@angular/router';
 
-import { RouterModule } from '@angular/router';
 
 
 @Component({
@@ -27,7 +26,7 @@ public form : FormGroup;
 
 public enviarCredenciales(){
   this.RestService.login('http://localhost:8080/PracticaDeLaboratorio03EJB-JSF-JPA/rest/cliente/login',
-  this.form.controls['correo'].value,this.form.controls['contrasena'].value,
+  this.form.controls['correo'].value, this.form.controls['contrasena'].value
   )
   .subscribe(respuesta =>{
     console.log('Inicio Correcto');
