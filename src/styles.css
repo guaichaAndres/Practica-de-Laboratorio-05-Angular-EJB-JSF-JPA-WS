@@ -11,7 +11,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   min-height: 100vh;
-  background: #49494d;
+  background: #b7b7b9;
 }
 
 .app-header {
@@ -126,4 +126,8 @@ body {
 .container .example-full-width,
 .container .btn-block {
   width:  100%;
+}
+.mat-card-image {
+  background-image: url('https://thumbs.dreamstime.com/b/textura-de-madera-de-color-claro-27235359.jpg');
+  background-size: cover;
 }

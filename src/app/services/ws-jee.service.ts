@@ -37,5 +37,14 @@ export class WsJeeService {
         }
         );
           }
+          public anular(url:string , cedula:any){
+            const body = new HttpParams()
+            .set('cedula', cedula)
+            return this.http.put(url,body.toString(),{
+              headers: new HttpHeaders()
+                .set('Content-Type', 'application/x-www-form-urlencoded')
+            }
+            );
+              }
       
 }

@@ -9,7 +9,14 @@ export class InicioComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
   fillerNav = [
     {name:"Inicio", route: "/inicio",icon:"home"},
-    {name:"Mi perfil", route: "/modificar",icon:"perm_contact_calendar"}
+    {name:"Mi perfil", route: "/modificar",icon:"perm_contact_calendar"},
+    {name:"Desactivar Cuenta", route: "/anular",icon:"delete"},
+    {name:"Realizar un Pedido", route: "/pedidos",icon:"add_shopping_cart"},
+    {name:"Ver mis Pedidos", route: "/ver-pedidos",icon:"credit_card"},
+    {name:"Log Out", route: "/login",icon:"exit_to_app"}
+
+
+
 
 ]
   //fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
