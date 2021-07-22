@@ -23,6 +23,11 @@ import { WsJeeLoginService } from './services/ws-jee-login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { WsJeeService } from './services/ws-jee.service';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { ModificarComponent } from './components/modificar/modificar.component';
+import { AnularComponent } from './components/anular/anular.component';
+import { PedidosComponent } from './components/pedidos/pedidos.component';
+import { VerPedidosComponent } from './components/ver-pedidos/ver-pedidos.component';
+import { NoPageFoundComponent } from './components/no-page-found/no-page-found.component';
 
 
 @NgModule({
@@ -30,7 +35,12 @@ import { InicioComponent } from './components/inicio/inicio.component';
     AppComponent,
     LogInComponent,
     RegisterComponent,
-    InicioComponent
+    InicioComponent,
+    ModificarComponent,
+    AnularComponent,
+    PedidosComponent,
+    VerPedidosComponent,
+    NoPageFoundComponent
   ],
   imports: [
     BrowserModule,

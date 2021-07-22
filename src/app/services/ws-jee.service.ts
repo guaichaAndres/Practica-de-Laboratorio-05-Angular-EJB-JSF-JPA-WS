@@ -19,5 +19,23 @@ export class WsJeeService {
     }
     );
       }
+
+      public modificar(url:string , cedula:any ,nombre:any 
+        ,apellido:any,direccion:any,telefono:any,correo:any,contrasena:any){
+        const body = new HttpParams()
+        .set('cedula', cedula)
+        .set('nombre', nombre)
+        .set('apellido', apellido)
+        .set('direccion', direccion)
+        .set('telefono', telefono)
+        .set('correo', correo)
+        .set('contrasena', contrasena);
+
+        return this.http.put(url,body.toString(),{
+          headers: new HttpHeaders()
+            .set('Content-Type', 'application/x-www-form-urlencoded')
+        }
+        );
+          }
       
 }

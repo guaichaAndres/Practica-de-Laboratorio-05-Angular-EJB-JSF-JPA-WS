@@ -11,7 +11,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   min-height: 100vh;
-  background: #e2e2e2;
+  background: #49494d;
 }
 
 .app-header {
@@ -31,6 +31,7 @@ body {
 .positronx {
   text-decoration: none;
   color: #ffffff;
+  height: auto;
 }
 
 .box {
@@ -108,4 +109,21 @@ body {
 
 .login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
   padding: 0.8375em 0;
+}
+
+.container{
+  height: 120%;
+
+}
+.container .mat-card {
+  padding: 40px 70px 50px;
+  max-width: 700px;
+}
+.container mat-card-header mat-card-title {
+  font-size: 30px;
+  margin: 0;
+}
+.container .example-full-width,
+.container .btn-block {
+  width:  100%;
 }

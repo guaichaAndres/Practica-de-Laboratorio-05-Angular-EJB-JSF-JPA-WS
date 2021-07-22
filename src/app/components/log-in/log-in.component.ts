@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LogInComponent implements OnInit {
 public form : FormGroup;
+submitted = false;
   constructor(private RestService : WsJeeLoginService, private formBuilder: FormBuilder,private router: Router) {
     
     this.form = this.formBuilder.group({
