@@ -47,11 +47,14 @@ export class WsJeeService {
             );
               }
               getBodegas(bodega:any){
-                
                 return this.http.get('http://localhost:8080/PracticaDeLaboratorio03EJB-JSF-JPA/rest/pedidos/productos/'+ bodega,{
                   headers: new HttpHeaders()
                 .set('Content-Type', 'application/x-www-form-urlencoded')
                 });
               }
-      
+              
+
+              public pedir(url:string , body:any){
+                return this.http.put(url,body);
+                  }
 }
