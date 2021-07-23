@@ -4,7 +4,6 @@ import { FormGroup, FormArray } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { WsJeeService } from 'src/app/services/ws-jee.service';
-import { Validators } from '@angular/forms';
 @Component({
   selector: 'app-pedidos',
   templateUrl: './pedidos.component.html',
@@ -12,7 +11,6 @@ import { Validators } from '@angular/forms';
 })
 
 export class PedidosComponent implements OnDestroy {
-  title = 'FormArray Example in Angular Reactive forms';
  
   displayedColumns: string[] = ['nombre', 'categoria','precio','stock'];
   
@@ -23,6 +21,7 @@ public pedido: FormGroup;
  
 
   public bodegas : any =[];
+  
   mobileQuery: MediaQueryList;
   fillerNav = [
     {name:"Inicio", route: "/inicio",icon:"home"},
@@ -40,10 +39,21 @@ public pedido: FormGroup;
   constructor(private wsBodegas : WsJeeService, private formBuilder: FormBuilder,
      changeDetectorRef: ChangeDetectorRef, media: MediaMatcher 
     ,private router: Router, private RestService : WsJeeService ,private fb:FormBuilder) {
+       
       this.skillsForm = this.fb.group({
-        name: '',
-        skills: this.fb.array([]) ,
+        nombre : '',
+        cantidad : '',
+        cedula : '',
+        estadoActual:'Enviado',
+        //productos: this.fb.array([]) ,
+        //productos : {'':''}
+         productos : new Map()
+         .set("Martillo",1)
+         .set("Vino Barato",1)
+
+
       });
+
     this.form= this.formBuilder.group({
       bodega : [],
     });
@@ -51,9 +61,7 @@ public pedido: FormGroup;
       cedula : [],
       nombre : [],
       estado : [],
-      productos: [{
-
-      }]
+     
     });
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -76,39 +84,40 @@ console.log(this.bodegas);
   }
   public hacerPedido(){
     this.RestService.pedir('http://localhost:8080/PracticaDeLaboratorio03EJB-JSF-JPA/rest/pedidos/pedir',
-    this.pedido.value
- 
+    this.skillsForm.value
     )
     .subscribe(respuesta =>{
       console.log('Se generó el pedido Correctamente');
       this.router.navigate(['/inicio']);
     })
   }
-get skills() : FormArray {
-    return this.skillsForm.get("skills") as FormArray
+get productos() : FormArray {
+    return this.skillsForm.get("productos") as FormArray
   }
  
   newSkill(): FormGroup {
     return this.fb.group({
-      skill: '',
-      exp: '',
+      nombre: '',
+      cantidad: '',
+     
     })
   }
  
   addSkills() {
-    this.skills.push(this.newSkill());
+    this.productos.push(this.newSkill());
   }
  
   removeSkill(i:number) {
-    this.skills.removeAt(i);
+    this.productos.removeAt(i);
   }
  
   onSubmit() {
     console.log(this.skillsForm.value);
+    const firstNames = this.skillsForm.value.productos.map( (x: { nombre: any; }) => x.nombre);
   }
- 
+
 }
- 
+
  
 export class country {
   id: string;

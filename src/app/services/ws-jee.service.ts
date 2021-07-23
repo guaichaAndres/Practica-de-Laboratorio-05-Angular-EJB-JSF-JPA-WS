@@ -57,4 +57,10 @@ export class WsJeeService {
               public pedir(url:string , body:any){
                 return this.http.put(url,body);
                   }
+                  getPedidos(cedula:any){
+                    return this.http.get('http://localhost:8080/PracticaDeLaboratorio03EJB-JSF-JPA/rest/pedidos/listaPedidos/'+ cedula,{
+                      headers: new HttpHeaders()
+                    .set('Content-Type', 'application/x-www-form-urlencoded')
+                    });
+                  }
 }
