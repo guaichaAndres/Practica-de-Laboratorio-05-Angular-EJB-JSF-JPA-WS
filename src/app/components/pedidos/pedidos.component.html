@@ -74,9 +74,9 @@
         <div [formGroupName]="i">
           {{i}}
           skill name :
-          <input type="text" formControlName="skill">
+          <input matInput placeholder="Ingrese el producto" formControlName="skill">
           exp:
-          <input type="text" formControlName="exp">
+          <input matInput placeholder="Ingrese la cantidad" formControlName="exp">
    
           <button (click)="removeSkill(i)">Remove</button>
         </div>
@@ -84,14 +84,14 @@
     </div>
    
     <p>
-      <button type="submit">Submit</button>
+      <button mat-stroked-button   color="accent" class="btn-block">Submit</button>
     </p>
    
   </form>
    
    
   <p>
-    <button type="button" (click)="addSkills()">Add</button>
+    <button mat-stroked-button   color="accent" class="btn-block" (click)="addSkills()">Add</button>
   </p>
    
   {{this.skillsForm.value | json}}
